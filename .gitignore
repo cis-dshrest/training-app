@@ -1,0 +1,20 @@
+#Ignoring files and folders
+.classpath
+.tern-project
+.springBeans
+
+bin/
+
+# Ignoring binaries
+*.class
+
+# Package files
+*.jar
+*.war
+
+# Maven
+target/
+
+#other files
+.springBeans
+

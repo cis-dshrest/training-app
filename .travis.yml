@@ -1,0 +1,28 @@
+language: java
+
+install: mvn install -Dmaven.compiler.target=1.8 -Dmaven.compiler.source=1.8 -DskipTests=true
+script: mvn test -Dmaven.compiler.target=1.8 -Dmaven.compiler.source=1.8
+
+
+jdk: 
+    - oraclejdk8
+
+
+# database
+before_script:
+    - mysql -e "create database IF NOT EXISTS exploration;" -uroot
+
+
+services: mysql
+
+
+# blacklist
+branches:
+    except:
+        - master
+
+# whitelist
+branches:
+    only:
+        - develop
+
