@@ -10,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -39,10 +38,12 @@ public class Event {
 	@Column(name = "location", nullable = false)
 	private String location;
 	
+	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="startDate")
 	private Date startDate;
 	
+	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="endDate")
 	private Date endDate;

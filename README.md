@@ -22,8 +22,7 @@ The tools used to build the application is given below.
 3. Get [mysql 5.6](http://dev.mysql.com/downloads/mysql/)
 
 4. **Start the mysql server**
-5. **Run the [sql script](https://github.com/private-pilot/exploratory-testing/blob/develop/src/main/resources/sql/createtable.sql) in your mysql server**
-6. 
+5. **Run the [sql script](https://github.com/private-pilot/training-registration/blob/develop/src/main/resources/sql/createtable.sql) in your mysql server**
 
 ####Manually
 ------------
@@ -40,13 +39,15 @@ $ cp target/Exploration.war {tomcat-directory}/webapps/
 
 3. *To setup mysql, start the mysql server and run the shell script provided!*
 ```
-$ sh setupdb.sh
+$ sh setupdb.sh [./src/main/resources/sql/createtable.sql](https://github.com/private-pilot/exploratory-testing/blob/develop/src/main/resources/sql/createtable.sql)
 ```
 
 4. Run tomcat
 ```
 $ sh {tomcat-directory}/bin/catalina.sh start
 ```
+
+---
 
 ####Eclipse
 Import the project. Right click > maven > update project  

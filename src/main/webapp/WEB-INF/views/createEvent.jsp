@@ -6,9 +6,15 @@
 <title>Create Game</title>
 <!-- javascript and css -->
 <%@include file="includes.jsp"%>
+<link rel="stylesheet" type="text/css" href="<c:url value="/resources/core/css/bootstrap-datetimepicker.min.css" />" />
 
+<script type="text/javascript" src="<c:url value="/resources/core/js/bootstrap-datetimepicker.min.js" />" ></script>
 
 <script>
+	$(function() {
+	    $('.datetimepicker').datetimepicker();
+	});
+ 
 	function validate() {
 		var date1 = $("#startDate").val();
 		var date2 = $("#endDate").val();
@@ -47,7 +53,7 @@
           <label class="control-label col-xs-2" for="eventName">Event Name: </label>
           <div class="col-xs-4">
             <form:input class="form-control" type="text" path="eventName" id="eventName"/>
-            <form:errors path="eventName" cssClass="error" />
+            <form:errors style="color: red;" path="eventName" cssClass="error" />
           </div>
         </div>
         
@@ -56,7 +62,7 @@
           <label class="control-label col-xs-2" for="description">Description: </label>
           <div class="col-xs-4">
             <form:input class="form-control" type="text" path="description" id="description" />
-            <form:errors path="description" cssClass="error" />
+            <form:errors style="color: red;" path="description" cssClass="error" />
           </div>
         </div>
         
@@ -65,7 +71,7 @@
           <label class="control-label col-xs-2" for="location">Location: </label>
           <div class="col-xs-4">
             <form:input class="form-control" type="text" path="location" id="location" />
-            <form:errors path="location" cssClass="error" />
+            <form:errors style="color: red;" path="location" cssClass="error" />
           </div>
         </div>
 
@@ -73,17 +79,33 @@
           <!-- Start Date -->
           <label class="control-label col-xs-2" for="startDate">Start Date: </label>
           <div class="col-xs-4">
-            <form:input class="form-control" type="text" path="startDate" id="startDate" value="${dateString}" placeholder="YYYY-MM-DD HH:mm:ss"/>
-            <form:errors path="startDate" cssClass="error" />
-          </div>
+	          <div class="well">
+				  <div class="datetimepicker input-append date">
+				  	<form:input data-format="yyyy-MM-dd hh:mm:ss" class="form-control" type="text" path="startDate" id="startDate" placeholder="2015-01-14 09:15:00"/>
+				    <span class="add-on">
+				      <i data-time-icon="glyphicon glyphicon-time" data-date-icon="glyphicon glyphicon-calendar">
+				      </i>
+				    </span>
+				  </div>
+				  <form:errors style="color: red;" path="startDate" cssClass="error" /> 
+			  </div>
+		  </div>
         </div>
         
         <div class="form-group">
           <!-- End Date -->
           <label class="control-label col-xs-2" for="endDate">End Date: </label>
           <div class="col-xs-4">
-            <form:input class="form-control" type="text" path="endDate" id="endDate" placeholder="YYYY-MM-DD HH:mm:ss"/>
-            <form:errors path="endDate" cssClass="error" />
+          <div class="well">
+			  <div id="" class="datetimepicker input-append date">
+			  	<form:input data-format="yyyy-MM-dd hh:mm:ss" class="form-control" type="text" path="endDate" id="endDate" placeholder="2015-01-14 15:15:00"/>
+			    <span class="add-on">
+			      <i data-time-icon="glyphicon glyphicon-time" data-date-icon="glyphicon glyphicon-calendar">
+			      </i>
+			    </span>
+			  </div>
+			  <form:errors style="color: red;" path="endDate" cssClass="error" /> 
+		  </div>
           </div>
         </div> 
         
@@ -98,7 +120,7 @@
     </form:form>
     <br><br>
     
-    <div id="errorMsg" class="alert alert-danger" role="alert" hidden></div>
+    <div id="errorMsg" class="alert alert-danger" role="alert" style="display: none;"></div>
   </div>
 
 </body>

@@ -7,6 +7,7 @@
   <!-- javascript and css -->
   <%@include file="includes.jsp"%>
   
+  
   <style>
     #listTitleRow:first-child{
       font-weight: bold;

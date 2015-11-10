@@ -101,7 +101,12 @@ public class UIController {
 	}
 	
 	@RequestMapping(value = { "/register" }, method = RequestMethod.GET)
-	public String newUser(ModelMap model) {
+	public String newUser(HttpServletRequest request, ModelMap model) {
+		
+		HttpSession session = request.getSession(true);
+		if (session != null && session.getAttribute("username") != null) {
+			return "redirect:/user/profile";
+		}
 		
 		User user = new User();
 		model.addAttribute("user", user);
@@ -110,7 +115,12 @@ public class UIController {
 	
 	@RequestMapping(value = { "/register" }, method = RequestMethod.POST)
 	public String saveUser(@Valid User user, BindingResult result,
-			ModelMap model) {
+			HttpServletRequest request, ModelMap model) {
+		
+		HttpSession session = request.getSession(true);
+		if (session != null && session.getAttribute("username") != null) {
+			return "redirect:/user/profile";
+		}
 		
 		System.out.println("\n\nsaving user: " + user);
 		

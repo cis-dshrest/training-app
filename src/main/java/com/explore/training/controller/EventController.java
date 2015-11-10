@@ -155,12 +155,14 @@ public class EventController {
 		return "createEvent";
 	}
 	
+
 	@InitBinder
 	public void initBinder(WebDataBinder webDataBinder) {
-		 SimpleDateFormat dateFormat = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
+		 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		 dateFormat.setLenient(false);
 		 webDataBinder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
 	 }
+	
 	
 	@RequestMapping(value = {"/new" }, method = RequestMethod.POST)
 	public String submitCreateEvent(@Valid Event event, BindingResult result, ModelMap model) {

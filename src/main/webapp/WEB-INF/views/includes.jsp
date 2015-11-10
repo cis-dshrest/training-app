@@ -4,7 +4,8 @@
 <script type="text/javascript" src="<c:url value="/resources/core/js/helpModule.js"/>" ></script>
 <script type="text/javascript" src="<c:url value="/resources/core/js/jquery.min.js" />" ></script> 
 <script type="text/javascript" src="<c:url value="/resources/core/js/bootstrap.min.js" />" ></script>
-    
+
+
     
 <!-- CSS -->
 
