@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Create Game</title>
+<title>Create Event</title>
 <!-- javascript and css -->
 <%@include file="includes.jsp"%>
 <link rel="stylesheet" type="text/css" href="<c:url value="/resources/core/css/bootstrap-datetimepicker.min.css" />" />

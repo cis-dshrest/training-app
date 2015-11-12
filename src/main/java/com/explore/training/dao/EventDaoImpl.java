@@ -32,8 +32,14 @@ public class EventDaoImpl extends AbstractDao<Integer, Event> implements EventDa
 
 	@Override
 	public void deleteEvent(int eventid) {
+		//remoev event from events table.
 		Query query = getSession().createSQLQuery("delete from events where id = :id");
 		query.setInteger("id", eventid);
+		query.executeUpdate();
+		
+		//update event_registration table to remove event from there as well.
+		query = getSession().createSQLQuery("delete from event_registration where eventid = :eventid");
+		query.setInteger("eventid", eventid);
 		query.executeUpdate();
 	}
 

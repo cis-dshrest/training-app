@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Create Game</title>
+<title>Edit Events</title>
 <!-- javascript and css -->
 <%@include file="includes.jsp"%>
 
