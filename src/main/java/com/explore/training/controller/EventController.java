@@ -23,7 +23,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.explore.training.model.Event;
 import com.explore.training.model.EventRegistration;
-import com.explore.training.model.User;
 import com.explore.training.service.EventRegistrationService;
 import com.explore.training.service.EventService;
 
